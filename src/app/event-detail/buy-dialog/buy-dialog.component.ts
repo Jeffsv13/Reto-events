@@ -9,11 +9,10 @@ import { Event } from '../../shared/models/event.model';
 import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
-  selector: 'app-buy-dialog',
-  standalone: true,
-  imports: [FormsModule, MatButtonModule,MatFormField,MatInputModule],
-  templateUrl: './buy-dialog.component.html',
-  styleUrl: './buy-dialog.component.css'
+    selector: 'app-buy-dialog',
+    imports: [FormsModule, MatButtonModule, MatFormField, MatInputModule],
+    templateUrl: './buy-dialog.component.html',
+    styleUrl: './buy-dialog.component.css'
 })
 export class BuyDialogComponent {
   data = inject(MAT_DIALOG_DATA) as Event;

@@ -4,11 +4,10 @@ import { Sale } from '../../models/event.model';
 import { EventsService } from '../../services/events.service';
 
 @Component({
-  selector: 'app-voucher-dialog',
-  standalone: true,
-  imports: [],
-  templateUrl: './voucher-dialog.component.html',
-  styleUrl: './voucher-dialog.component.css'
+    selector: 'app-voucher-dialog',
+    imports: [],
+    templateUrl: './voucher-dialog.component.html',
+    styleUrl: './voucher-dialog.component.css'
 })
 export class VoucherDialogComponent {
   data = inject(MAT_DIALOG_DATA) as {saleId:number};

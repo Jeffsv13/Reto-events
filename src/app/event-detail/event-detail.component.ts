@@ -14,15 +14,15 @@ import confetti from 'canvas-confetti';
 import { NotificationsService } from 'angular2-notifications';
 
 @Component({
-  selector: 'app-event-detail',
-  standalone: true,
-  imports: [LoggedInHeaderComponent, 
-    FooterComponent,
-    EventCardComponent,
-    MatButtonModule
-  ],
-  templateUrl: './event-detail.component.html',
-  styleUrl: './event-detail.component.css'
+    selector: 'app-event-detail',
+    standalone: true,
+    imports: [LoggedInHeaderComponent,
+        FooterComponent,
+        EventCardComponent,
+        MatButtonModule
+    ],
+    templateUrl: './event-detail.component.html',
+    styleUrl: './event-detail.component.css'
 })
 export class EventDetailComponent implements OnInit{
   event!: Event;

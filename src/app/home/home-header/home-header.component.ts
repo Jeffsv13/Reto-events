@@ -4,11 +4,10 @@ import {MatButtonModule} from '@angular/material/button'
 import { RouterLink } from '@angular/router';
 import { AuthService } from '../../shared/services/auth.service';
 @Component({
-  selector: 'app-home-header',
-  standalone: true,
-  imports: [MatButtonModule,ReactiveFormsModule,RouterLink],
-  templateUrl: './home-header.component.html',
-  styleUrl: './home-header.component.css'
+    selector: 'app-home-header',
+    imports: [MatButtonModule, ReactiveFormsModule, RouterLink],
+    templateUrl: './home-header.component.html',
+    styleUrl: './home-header.component.css'
 })
 export class HomeHeaderComponent {
   authService = inject(AuthService);

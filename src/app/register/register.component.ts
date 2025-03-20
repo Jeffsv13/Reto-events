@@ -14,20 +14,20 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { NotificationsService } from 'angular2-notifications';
 
 @Component({
-  selector: 'app-register',
-  standalone: true,
-  imports: [
-    SimpleHeaderComponent,
-    FooterComponent,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    ReactiveFormsModule,
-    MatSelectModule,
-    RouterLink
-  ],
-  templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+    selector: 'app-register',
+    standalone: true,
+    imports: [
+        SimpleHeaderComponent,
+        FooterComponent,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        ReactiveFormsModule,
+        MatSelectModule,
+        RouterLink
+    ],
+    templateUrl: './register.component.html',
+    styleUrl: './register.component.css'
 })
 export class RegisterComponent {
   authService = inject(AuthService);

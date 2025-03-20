@@ -10,11 +10,11 @@ import { ResetPasswordRequestBody } from '../../shared/models/auth.model';
 import { NotificationsService } from 'angular2-notifications';
 
 @Component({
-  selector: 'app-reset-password-dialog',
-  standalone: true,
-  imports: [MatInputModule,MatButtonModule,FormsModule],
-  templateUrl: './reset-password-dialog.component.html',
-  styleUrl: './reset-password-dialog.component.css'
+    selector: 'app-reset-password-dialog',
+    standalone: true,
+    imports: [MatInputModule, MatButtonModule, FormsModule],
+    templateUrl: './reset-password-dialog.component.html',
+    styleUrl: './reset-password-dialog.component.css'
 })
 export class ResetPasswordDialogComponent {
   data = inject(MAT_DIALOG_DATA) as {email: string}

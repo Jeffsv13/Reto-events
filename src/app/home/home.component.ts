@@ -12,19 +12,18 @@ import { HighlightableDirective } from '../shared/directives/highlightable.direc
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [HomeHeaderComponent,
-      FooterComponent,
-      EventCardComponent,
-      MatSelectModule,
-      MatFormFieldModule,
-      ReactiveFormsModule,
-      HighlightableDirective,
-      RouterLink,
+    selector: 'app-home',
+    imports: [HomeHeaderComponent,
+        FooterComponent,
+        EventCardComponent,
+        MatSelectModule,
+        MatFormFieldModule,
+        ReactiveFormsModule,
+        HighlightableDirective,
+        RouterLink,
     ],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit{
 

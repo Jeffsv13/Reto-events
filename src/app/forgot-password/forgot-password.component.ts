@@ -12,19 +12,19 @@ import { ResetPasswordDialogComponent } from './reset-password-dialog/reset-pass
 import { NotificationsService } from 'angular2-notifications';
 
 @Component({
-  selector: 'app-forgot-password',
-  standalone: true,
-  imports: [
-    SimpleHeaderComponent,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    FooterComponent,
-    RouterLink,
-    FormsModule
-  ],
-  templateUrl: './forgot-password.component.html',
-  styleUrl: './forgot-password.component.css'
+    selector: 'app-forgot-password',
+    standalone: true,
+    imports: [
+        SimpleHeaderComponent,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        FooterComponent,
+        RouterLink,
+        FormsModule
+    ],
+    templateUrl: './forgot-password.component.html',
+    styleUrl: './forgot-password.component.css'
 })
 export class ForgotPasswordComponent {
   authService = inject(AuthService);

@@ -13,17 +13,17 @@ import { NotificationsService } from 'angular2-notifications';
 
 
 @Component({
-  selector: 'app-login',
-  standalone:true,
-  imports: [SimpleHeaderComponent, 
-    FooterComponent,
-    ReactiveFormsModule, 
-    MatInputModule,
-    MatFormFieldModule,
-    RouterLink,
-    MatButtonModule],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+    selector: 'app-login',
+    standalone: true,
+    imports: [SimpleHeaderComponent,
+        FooterComponent,
+        ReactiveFormsModule,
+        MatInputModule,
+        MatFormFieldModule,
+        RouterLink,
+        MatButtonModule],
+    templateUrl: './login.component.html',
+    styleUrl: './login.component.css'
 })
 export class LoginComponent {
   router = inject(Router);
