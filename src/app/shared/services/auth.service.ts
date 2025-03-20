@@ -3,6 +3,7 @@ import { inject,Injectable } from '@angular/core';
 import { LoginApiResponse, registerRequestBody, ResetPasswordRequestBody } from '../models/auth.model';
 import { jwtDecode } from 'jwt-decode';
 import { NotificationsService } from 'angular2-notifications';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +12,7 @@ export class AuthService {
   private baseUrl ="https://localhost:7117/api/";
   private http = inject(HttpClient);
   notifications = inject(NotificationsService);
-
+  router = inject(Router);
   private email ='';
   private name = '';
   private role = '';
@@ -78,7 +79,7 @@ export class AuthService {
     else{
       this.notifications.success('Logout','Logout exitoso');
     }
-    
+    this.router.navigateByUrl('/');
   }
 
   sendTokenToResetPassword(email: string){

@@ -1,0 +1,6 @@
+:root {
+    --mat-tab-header-divider-color: var(--primary-color);
+    --mdc-tab-indicator-active-indicator-color: var(--secondary-color);
+    --mat-tab-header-active-hover-indicator-color: var(--secondary-color);
+    --mat-tab-header-active-focus-indicator-color: var(--secondary-color);
+  }

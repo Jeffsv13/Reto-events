@@ -46,6 +46,7 @@ export class EventDetailComponent implements OnInit{
       this.notifications.error('Error','Debes iniciar sesión para comprar');
 
       this.router.navigate(['/login']);
+      return;
     }
 
     if(this.authService.getRole() === "Administrator"){

@@ -9,16 +9,24 @@
         </div>
         @if(authService.getIsLoggedIn()){
             <div class="buttons-container">
-                <button mat-button class="menu" routerLink="/login">MENU</button>
-                <button mat-button class="logout" (click)="authService.logout()">CERRAR SESIÓN</button>
+              <button
+                mat-button
+                class="menu"
+                [routerLink]="authService.getRole() === 'Administrator' ? '/admin' : '/customer'">
+                MENU
+              </button>
+              <button mat-button class="logout" (click)="authService.logout()">
+                CERRAR SESIÓN
+              </button>
             </div>
-        }
-        @else {
+            } @else {
             <div class="buttons-container">
-                <button mat-button class="login" routerLink="/login">INGRESAR</button>
-                <button mat-button class="register" routerLink="/register">REGÍSTRATE</button>
+              <button mat-button class="login" routerLink="/login">INGRESAR</button>
+              <button mat-button class="register" routerLink="/register">
+                REGÍSTRATE
+              </button>
             </div>
-        }
+            }
         
     </div>
 </header>

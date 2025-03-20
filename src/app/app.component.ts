@@ -1,13 +1,12 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AuthService } from './shared/services/auth.service';
-import { NotificationsService, Options, SimpleNotificationsModule } from 'angular2-notifications';
+import { Options, SimpleNotificationsModule } from 'angular2-notifications';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
 @Component({
     selector: 'app-root',
-    standalone: true,
-    imports: [RouterOutlet, SimpleNotificationsModule, NgxSpinnerModule],
+    imports: [RouterOutlet, SimpleNotificationsModule,NgxSpinnerModule],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })
@@ -22,6 +21,4 @@ export class AppComponent {
   constructor(){
     this.authService.decodeToken();
   }
-
-
 }
