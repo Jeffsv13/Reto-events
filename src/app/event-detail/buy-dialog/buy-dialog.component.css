@@ -1,0 +1,35 @@
+.container {
+    width: 240px;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary-color);
+    padding: 20px;
+    & .concert-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      & .title {
+        color: var(--primary-color);
+        text-align: center;
+        font-size: 24px;
+      }
+      & .price {
+        font-size: 18px;
+        color: white;
+        font-weight: 500;
+        & .value {
+          color: var(--accent-color);
+        }
+      }
+    }
+    & form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }

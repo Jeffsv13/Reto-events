@@ -1,0 +1,19 @@
+
+<div class="container box-shadow">
+    <div class="superior">
+        <div class="date-time-container">
+            <span class="date">{{data.dateEvent}}</span>
+            <span class="time">{{data.timeEvent}}</span>
+        </div>
+        <div class="genre-container">
+            <span>{{data.genre}}</span>
+        </div>
+    </div>
+    <div class="middle">
+        <img [src]="data.imageUrl" alt="Event image" (error)="onImageError()">
+    </div>
+    <div class="bottom">
+        <span class="description">{{data.description}}</span>
+        <span class="place">{{data.place}}</span>
+    </div>
+</div>

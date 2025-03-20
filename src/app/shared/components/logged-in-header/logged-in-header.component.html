@@ -1,0 +1,23 @@
+<header class="box-shadow">
+    <div class="container">
+        <div class="logo-container" routerLink="/">
+            <img src="images/default.jpeg" alt="logo">
+            <h1>RETO EVENTS</h1>
+        </div>
+        @if(authService.getIsLoggedIn()){
+            <div class="name-container">
+                <span>{{authService.getName() + '-' + authService.getRole()}}</span>
+            </div>
+            <div class="buttons-container">
+                <button mat-button class="primary" routerLink="/my-account">MI CUENTA</button>
+                <button mat-button class="accent" (click)="authService.logout()">CERRAR SESIÓN</button>
+            </div>
+        }@else {
+            <div class="buttons-container">
+                <button mat-button class="primary"routerLink="/login">INGRESAR</button>
+                <button mat-button class="accent" routerLink="/register">REGÍSTRATE</button>
+            </div>
+        }
+        
+    </div>
+</header>

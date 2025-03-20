@@ -1,0 +1,27 @@
+<div class="page-container">
+    <app-home-header 
+    (searchValueChange)="onSearchValueChange($event)"
+    ></app-home-header>
+
+    <div class="content-container">
+        <div class="filter">
+            <mat-form-field>
+                <mat-label>Género</mat-label>
+                <mat-select [formControl] ="currentGenre">
+                    <mat-option [value]="0">Todos</mat-option>
+                    @for(item of genres; track $index){
+                        <mat-option [value]="item.id">{{item.name}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+            <span>Selecciona tu género favorito</span>
+        </div>
+        <div class="event-list">
+            @for(item of events; track $index){
+                <app-event-card appHighlightable [data]="item" [routerLink]="'/event-detail/' + item.id"></app-event-card>
+            }
+        </div>
+    </div>
+
+    <app-footer></app-footer>
+</div>
