@@ -13,6 +13,7 @@ import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-home',
+    standalone: true,
     imports: [HomeHeaderComponent,
         FooterComponent,
         EventCardComponent,

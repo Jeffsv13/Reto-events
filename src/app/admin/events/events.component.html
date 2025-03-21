@@ -1,1 +1,94 @@
-<p>events works!</p>
+<div class="container">
+    <div class="title-container">
+        <div class="title">
+            <span>Eventos</span>
+        </div>
+    </div>
+    <div class="tabs">
+        <button [class.active]="viewMode === 'registro'" (click)="setViewMode('registro')">Registro</button>
+        <!--<button [class.active]="viewMode === 'listado'" (click)="setViewMode('listado')">Listado</button>-->
+    </div>
+    <div class="card">
+        <div class="card-data">
+            <form [formGroup]="registerForm">
+                <mat-form-field appearance="outline">
+                    <mat-label>Titulo</mat-label>
+                    <input matInput type="text" formControlName="Title"/>
+                    <mat-error>Titulo es requerido</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Descripción</mat-label>
+                    <input matInput type="text" formControlName="Description"/>
+                    <mat-error>Descripción es requerida</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Descripción extendida</mat-label>
+                    <input matInput type="text" formControlName="ExtendedDescription"/>
+                    @if(registerForm.controls.ExtendedDescription.hasError('required')){
+                        <mat-error>Descripción extendida es requerida</mat-error>
+                    } @if(registerForm.controls.ExtendedDescription.hasError("maxlength")){
+                        <mat-error>Descripción muy larga</mat-error>
+                    }
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Lugar</mat-label>
+                    <input matInput type="text" formControlName="Place"/>
+                    @if(registerForm.controls.Place.hasError('required')){
+                        <mat-error>Lugar es requerido</mat-error>
+                    } @if(registerForm.controls.Place.hasError("maxlength")){
+                        <mat-error>Descripción del lugar muy larga</mat-error>
+                    }
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Fecha</mat-label>
+                    <input matInput type="date" formControlName="DateEvent"/>
+                    <mat-error>Fecha es requerida</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Hora</mat-label>
+                    <input matInput type="time" formControlName="TimeEvent"/>
+                    <mat-error>Hora es requerida</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Precio</mat-label>
+                    <input matInput type="number" formControlName="UnitPrice"/>
+                    <mat-error>Precio es requerido</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Género</mat-label>
+                    <mat-select formControlName="GenreId">
+                        @for(item of genres; track $index){
+                            <mat-option [value]="item.id">{{item.name}}</mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Cantidad de entradas</mat-label>
+                    <input matInput type="number" formControlName="TicketsQuantity"/>
+                    <mat-error>Cantidad de entradas es requerido</mat-error>
+                </mat-form-field>
+                <div class="image-upload-container">
+                    <input type="file" id="fileInput" (change)="onFileSelected($event)" hidden>
+                    <button mat-flat-button class="image-btn" (click)="triggerFileInput()">📷 Seleccionar Imagen</button>
+                    
+                    <div class="image-preview">
+                        @if(selectedImage){
+                            <img [src]="selectedImage" alt="Vista previa de la imagen">
+                        }
+                    </div>
+                @if(!selectedImage && formSubmitted){
+                    <mat-error>Una imagen es requerida</mat-error>
+                }
+                </div>
+                <button mat-flat-button
+                class="box-shadow"
+                [disabled]="registerForm.invalid"
+                (click)="register()">
+                REGISTRAR
+            </button>
+            </form>
+        </div>
+    </div>
+    
+</div>
+  
